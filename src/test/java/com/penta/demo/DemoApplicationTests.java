@@ -7,7 +7,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DemoApplicationTests {
 
     @Test
-    void contextLoads() {
+    void giveSuccess() {
+        assert true;
+    }
+
+    @Test
+    void giveFailure() {
+        assert false;
     }
 
 }
