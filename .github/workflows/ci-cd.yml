@@ -38,4 +38,4 @@ jobs:
         run: |
           # Example of deploying to a server or cloud provider
           # This step is highly specific to your deployment environment
-          # For example, use SSH to copy the Docker image and run it
+          # For example, use SSH to copy the Docker image and run it on a server
