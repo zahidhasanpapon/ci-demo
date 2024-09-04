@@ -20,20 +20,19 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'  # Updated distribution name
+          distribution: 'temurin'
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
 
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
       - name: Build Docker image
-        run: |
-          docker build -t demo .
+        run: docker build -t imran110219/demo .
 
       - name: Push Docker image to Docker Hub
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: your-dockerhub-username/demo:latest
+        run: docker push imran110219/demo:latest
 
       - name: Deploy to Production
         run: |
