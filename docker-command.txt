@@ -1,0 +1,4 @@
+Build Docker
+docker build -t demo .
+Run Docker
+docker run -p 8080:8080 demo
