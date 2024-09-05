@@ -32,7 +32,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
       - name: Build Docker image
-        run: docker build -t zhidhasanpp/ci-demo .
+        run: docker build -t zahidhasanpp/ci-demo .
 
       - name: Push Docker image to Docker Hub
         run: docker push zahidhasanpp/ci-demo:latest
